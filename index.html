@@ -7,9 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: 'Poppins', sans-serif;
       background: url('./bg3.jpg') no-repeat center center/cover;
       color: #fff;
@@ -23,10 +28,13 @@
       align-items: center;
       padding: 20px 50px;
       background-color: rgba(28, 28, 28, 0.9);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      margin: 0;
       font-size: 1.8rem;
       font-family: 'Bradley Hand ITC', cursive;
       font-weight: 700;
@@ -40,8 +48,6 @@
 
     nav ul {
       list-style: none;
-      margin: 0;
-      padding: 0;
       display: flex;
     }
 
@@ -62,8 +68,8 @@
 
     /* Sections */
     section {
-      padding: 50px;
-      scroll-margin-top: 100px;
+      padding: 80px 50px;
+      margin-top: 60px;
     }
 
     section h2 {
@@ -76,13 +82,13 @@
     #about {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 100px 50px;
+      justify-content: center;
+      text-align: center;
       height: 100vh;
     }
 
     #about .content {
-      max-width: 50%;
+      max-width: 60%;
     }
 
     #about h1 {
@@ -101,15 +107,27 @@
       color: #bbb;
     }
 
-    /* Footer */
-    footer {
+    /* Skills */
+    #skills p {
       text-align: center;
-      padding: 20px;
-      background-color: rgba(28, 28, 28, 0.9);
-      color: #fff;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    /* Contact and Education */
+    /* Experience */
+    #experience ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #experience li {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    /* Contact & Education */
     #contact, #education {
       text-align: center;
       padding: 20px 0;
@@ -118,7 +136,6 @@
     #contact a, #education p {
       text-decoration: none;
       color: #fff;
-      margin-right: 20px;
       transition: color 0.3s;
     }
 
@@ -126,19 +143,44 @@
       color: #00c3ff;
     }
 
-    #contact .contact-icons, #education .education-details {
+    #contact .contact-icons {
       display: flex;
       justify-content: center;
-      align-items: center;
+      gap: 15px;
       flex-wrap: wrap;
+      margin-top: 15px;
     }
 
-    #contact .contact-icons i, #education .education-details i {
-      margin-right: 10px;
+    #contact .contact-icons a {
+      font-size: 1.2rem;
     }
 
-    #education .education-details p {
-      margin-bottom: 5px;
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(28, 28, 28, 0.9);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      #about .content {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
@@ -162,7 +204,7 @@
   <section id="about">
     <div class="content">
       <h1>Hello, This is <span>Saikiran Paka</span></h1>
-      <p>With 8+ years of experience in Java Full-Stack Development, I specialize in creating robust and scalable applications. I am excellent in both frontend and backend development and certified as an AWS Solutions Architect. Passionate about delivering seamless user experiences and ensuring high-quality code for every project.</p>
+      <p>With 8+ years of experience in Java Full-Stack Development, I specialize in creating robust and scalable applications. I am excellent in both frontend and backend development and certified as an AWS Solutions Architect.</p>
     </div>
   </section>
 
@@ -171,66 +213,34 @@
     <p>Java (17/11/08), Spring Boot, Python, Node.js, JavaScript (React & Angular)</p>
     <p>Kafka, RabbitMQ</p>
     <p>MySQL, MongoDB, PostgreSQL, Couchbase, Cassandra</p>
-    <p>AWS (EC2, Lambda, ECS/EKS), GCP (Compute Engine, Cloud Functions, GKE), Azure (Virtual Machines, Azure Functions, AKS)</p>
-    <p>Linux (CLI Expertise)</p>
-    <p>CI/CD: Jenkins, GitLab</p>
-    <p>Version Control: Git, GitHub, GitLab, Perforce</p>
+    <p>AWS, GCP, Azure (EC2, Lambda, Kubernetes, AKS)</p>
+    <p>Linux, Jenkins, Git, GitHub, Bitbucket, Perforce</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
     <ul>
-      <li>
-        <strong>Java Full Stack Developer | incedoinc  | Aug 2023 - Present</strong><br>
-        <p>Tools: Angular, Spring Boot, Hibernate, Kafka, RabbitMQ, AWS (EC2, S3, Lambda).</p>
-      </li>
-      <li>
-        <strong>Full Stack Web Developer | 24/7 | Apr 2021 - Jul 2023</strong><br>
-        <p>Tools: Angular, Node.js, Spring Boot, Docker, Kubernetes, MongoDB.</p>
-      </li>
-      <li>
-        <strong>Java Full Stack Developer | Casey's General Store | Feb 2020 - Mar 2021</strong><br>
-        <p>Tools: Struts, Spring Framework, Oracle DB, JUnit, WebSphere.</p>
-      </li>
-      <li>
-        <strong>Java Developer | The Bank of Missouri | Jun 2018 - Dec 2023</strong><br>
-        <p>Tools: Hibernate, Servlets, Spring AOP, Apache Tomcat.</p>
-      </li>
-      <li>
-        <strong>J2EE Developer Intern | Pronix | May 2016 - Apr 2018</strong><br>
-        <p>Tools: Hibernate, Servlets, Spring AOP, Apache Tomcat.</p>
-      </li>
+      <li><strong>Java Full Stack Developer | incedoinc | Aug 2023 - Present</strong></li>
+      <li><strong>Full Stack Web Developer | 24/7 | Apr 2021 - Jul 2023</strong></li>
+      <li><strong>Java Full Stack Developer | Casey's General Store | Feb 2020 - Mar 2021</strong></li>
+      <li><strong>Java Developer | The Bank of Missouri | Jun 2018 - Dec 2019</strong></li>
+      <li><strong>J2EE Developer Intern | Pronix | May 2016 - Apr 2018</strong></li>
     </ul>
   </section>
 
   <section id="education">
     <h2>Education</h2>
-    <div class="education-details">
-      <p><strong>Northwest Missouri State University</strong></p>
-      <p>Maryville, Missouri</p>
-      <p>Master of Science: Computers and Information Systems</p>
-      <p>Graduated: Dec 2024</p>
-    </div>
+    <p><strong>Northwest Missouri State University</strong></p>
+    <p>Master of Science: Computers and Information Systems Dec 2024</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact-icons">
-      <a href="mailto:saikiranpakaa@gmail.com">
-        <i class="fas fa-envelope"></i> saikiranpakaa@gmail.com
-      </a>
-      <a href="tel:+19137355756">
-        <i class="fas fa-phone-alt"></i> +1-913-735-5756
-      </a>
-      <a href="https://www.linkedin.com/in/saikiranpaka/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="https://medium.com/@saikiranpaka" target="_blank">
-        <i class="fab fa-medium"></i> Medium
-      </a>
-      <a href="https://github.com/saikiranpaka" target="_blank">
-        <i class="fab fa-github"></i> GitHub
-      </a>
+      <a href="mailto:saikiranpakaa@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="tel:+19137355756"><i class="fas fa-phone-alt"></i> Call</a>
+      <a href="https://www.linkedin.com/in/saikiranpaka/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/saikiranpaka" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </section>
 
